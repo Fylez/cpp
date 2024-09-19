@@ -5,24 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/18 11:27:11 by lzaengel          #+#    #+#              #
-#    Updated: 2024/09/18 11:28:35 by lzaengel         ###   ########.fr        #
+#    Created: 2024/09/19 20:15:25 by lzaengel          #+#    #+#              #
+#    Updated: 2024/09/19 20:15:26 by lzaengel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 SRC = main.cpp Contact.cpp PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = g++
+CXX = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 NAME = Phonebook
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

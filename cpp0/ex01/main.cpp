@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:24:36 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/18 11:44:21 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:02:27 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	main()
 			ins_phonebook.addContact();
 		else if(cmd == "SEARCH")
 			ins_phonebook.SearchContact();
-		else if (cmd != "EXIT" && !cmd.empty())
-			std::cout << "Invalid Command, use ADD, SEARCH or EXIT" << std::endl;
 	}
 	std::cout << "Phonebook: Goodbye!" << std::endl;
 	std::cout << "---------------------------------------------------------------------" << std::endl;

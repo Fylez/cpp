@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:21:14 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/18 11:54:33 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:53:56 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 		std::cout << "---------------------------------------------------------------------" << std::endl;
 		if (this->index > 7)
 			this->index = 0;
-		if(!this->ins_contact[this->index].GetName().empty())
+		if(!this->ins_contact[this->index].GetName().empty()&& !std::cin.eof())
 		{
 			std::cout << "Contact at index " << this->index << "is gonna be overwritten, are you sure? (Y/N)" << std::endl;
 			std::cout << "-----------------------------" << std::endl;
@@ -58,7 +58,14 @@
 			{
 				std::getline(std::cin, input);
 				if(input == "Y")
+				{
 					std::cout << "Overwritting confirmed" << std::endl;
+                	this->ins_contact[this->index].SetName("");
+               		this->ins_contact[this->index].SetLastName("");
+               		this->ins_contact[this->index].SetNickname("");
+                	this->ins_contact[this->index].SetPhoneNumber("");
+                	this->ins_contact[this->index].SetDarkestSecret("");
+				}
 				else if(input == "N")
 				{
 					std::cout << "Adding new contact canceled" << std::endl;
@@ -70,38 +77,39 @@
 			std::cout << "-----------------------------" << std::endl;
 		}
 
-		while(this->ins_contact[this->index].GetName().empty())
+		while(this->ins_contact[this->index].GetName().empty()&& !std::cin.eof())
 		{
 			std::cout << "Enter first name for new contact" << std::endl;
 			std::getline(std::cin, input);
 			this->ins_contact[this->index].SetName(input);
 		}
-		while(this->ins_contact[this->index].GetLastName().empty())
+		while(this->ins_contact[this->index].GetLastName().empty()&& !std::cin.eof())
 		{
 			std::cout << "Enter Last name for new contact" << std::endl;
 			std::getline(std::cin, input);
 			this->ins_contact[this->index].SetLastName(input);
 		}
-		while(this->ins_contact[this->index].GetNickname().empty())
+		while(this->ins_contact[this->index].GetNickname().empty()&& !std::cin.eof())
 		{
 			std::cout << "Enter Nick name for new contact" << std::endl;
 			std::getline(std::cin, input);
 			this->ins_contact[this->index].SetNickname(input);
 		}
-		while(this->ins_contact[this->index].GetPhoneNumber().empty())
+		while(this->ins_contact[this->index].GetPhoneNumber().empty()&& !std::cin.eof())
 		{
 			std::cout << "Enter Phone Number for new contact" << std::endl;
 			std::getline(std::cin, input);
 			this->ins_contact[this->index].SetPhoneNumber(input);
 		}
-		while(this->ins_contact[this->index].GetDarkestSecret().empty())
+		while(this->ins_contact[this->index].GetDarkestSecret().empty()&& !std::cin.eof())
 		{
 			std::cout << "Enter Darkest Secrets for new contact" << std::endl;
 			std::getline(std::cin, input);
 			this->ins_contact[this->index].SetDarkestSecret(input);
 		}
 		this->index++;
-		std::cout << "New contact added" << std::endl;
+		if(!std::cin.eof())
+			std::cout << "New contact added" << std::endl;
 		std::cout << "---------------------------------------------------------------------" << std::endl;
 		
 	}
@@ -126,7 +134,7 @@
 		}
 		std::cout << "---------------------------------------------" << std::endl;
 		std::cout<< std::endl<< "Enter the index of the contact you want to see the details of" << std::endl;
-		while (input.empty() ||  input[0] < '0'  || input[0] > '7' || this->ins_contact[input[0] - '0'].GetName().empty())
+		while ((input.empty() ||  input[0] < '0'  || input[0] > '7' || this->ins_contact[input[0] - '0'].GetName().empty()) && !std::cin.eof() )
 		{
 			std::getline(std::cin, input);
 			if (input[0] >= '0' && input[0] <= '7' && !this->ins_contact[input[0] - '0'].GetName().empty())
@@ -139,7 +147,7 @@
 				std::cout<< "Darkest Secret:    " << this->ins_contact[input[0] - '0'].GetDarkestSecret() << std::endl;
 				std::cout << "-----------------------------" << std::endl << std::endl;
 			}
-			else
+			else if(!std::cin.eof())
 				std::cout << "Invalid index" << std::endl;
 		}
 	
