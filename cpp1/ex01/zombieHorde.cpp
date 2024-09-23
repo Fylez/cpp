@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 08:54:14 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/23 16:09:44 by lzaengel         ###   ########.fr       */
+/*   Created: 2024/09/23 15:38:00 by lzaengel          #+#    #+#             */
+/*   Updated: 2024/09/23 16:12:28 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
+# include "Zombie.hpp"
 
-# define ZOMBIE_HPP
-
-# include <iostream>
-
-class	Zombie
+Zombie* zombieHorde( int N, std::string name )
 {
-	private:
-		std::string name;
-
-	public:
-		Zombie (std::string);
-		~Zombie (void);
-		
-		void	announce (void) const;
+	int		i = 0;
+	Zombie *Zombie_Horde = new Zombie[N];
+	while(i < N)
+	{
+		Zombie_Horde[i].changename(name);
+		i++;
+	}
 	
-};
-
-#endif
+	return (Zombie_Horde);
+	
+}

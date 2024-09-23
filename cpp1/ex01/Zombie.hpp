@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 08:54:14 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/23 16:09:44 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:09:53 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class	Zombie
 
 	public:
 		Zombie (std::string);
+		Zombie (void);
 		~Zombie (void);
 		
 		void	announce (void) const;
+		void	changename (std::string);
 	
 };
 
