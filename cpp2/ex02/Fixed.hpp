@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:03:14 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/30 19:28:55 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/10/07 22:37:15 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ private:
     static const int nbrofbits = 8;
 
 public:
-    Fixed();
-    Fixed(const Fixed &other);
-    Fixed& operator=(const Fixed &other); 
-    ~Fixed();                            
+    Fixed(void);
+    Fixed(const Fixed &src);
+    Fixed& operator=(const Fixed &src); 
+    ~Fixed(void);                            
 	
 	Fixed(int entier);
 	Fixed(float flottant);
