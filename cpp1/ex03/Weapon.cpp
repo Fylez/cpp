@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:24:48 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/24 17:45:14 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:53:51 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 	}
 
 //CORE FUNCTION
-	std::string& Weapon::getType (void)
+	const std::string& Weapon::getType (void)
 	{
 		return (this->type);
 	}

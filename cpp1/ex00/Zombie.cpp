@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 08:55:53 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/23 16:09:59 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:43:49 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@
 
 	Zombie::Zombie( std::string newname ): name(newname)
 	{
+		std::cout << this->name << " has been created." << std::endl;
 	}
 
-	Zombie::Zombie(void)
-	{	
-	}
-	
 	Zombie::~Zombie( void )
 	{
-
+		std::cout << this->name << " has been destroyed." << std::endl;
 	}
 
 //CORE FUNCTION

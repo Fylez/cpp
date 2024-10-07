@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:22:31 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/09/24 17:45:17 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/10/07 13:53:40 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Weapon
 		Weapon (std::string);
 		~Weapon (void);
 		
-		std::string	&getType (void);
+		const std::string	&getType (void);
 		void	setType (std::string);
 	
 };
