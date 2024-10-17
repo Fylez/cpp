@@ -6,7 +6,7 @@
 /*   By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 08:55:53 by lzaengel          #+#    #+#             */
-/*   Updated: 2024/10/07 13:52:28 by lzaengel         ###   ########.fr       */
+/*   Updated: 2024/10/13 13:03:34 by lzaengel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@
 		std::cout << this->name << " has been created." << std::endl;
 	}
 	
-	Zombie::Zombie(void)
+	Zombie::Zombie(void):name("unamed")
 	{
-		this->name = "Unknow";
-		std::cout <<   "An non-named zombie has been created." << std::endl;
 	}
 	
 	Zombie::~Zombie( void )

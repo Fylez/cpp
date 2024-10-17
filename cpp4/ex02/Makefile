@@ -6,14 +6,14 @@
 #    By: lzaengel <lzaengel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 13:57:31 by lzaengel          #+#    #+#              #
-#    Updated: 2024/10/09 00:25:16 by lzaengel         ###   ########.fr        #
+#    Updated: 2024/10/13 12:52:06 by lzaengel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
-CXX = clang++
+CXX = c++
 RM = rm -f
 CXXFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -pedantic
 
